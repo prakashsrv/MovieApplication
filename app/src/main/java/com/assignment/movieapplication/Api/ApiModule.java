@@ -1,6 +1,7 @@
 package com.assignment.movieapplication.Api;
 
 
+import com.assignment.movieapplication.Constants;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +54,7 @@ public class ApiModule {
                 .createWithScheduler(Schedulers.io());
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://13.127.36.79:8080/v1/")
+                .baseUrl(Constants.URL_BASE)
                 .client(builder.build())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(rxAdapter)
