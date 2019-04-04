@@ -1,6 +1,8 @@
 package com.assignment.movieapplication;
 
 import com.assignment.movieapplication.Api.ApiModule;
+import com.assignment.movieapplication.Movies.MovieComponent;
+import com.assignment.movieapplication.Movies.MovieModule;
 
 import javax.inject.Singleton;
 
@@ -12,4 +14,6 @@ public interface AppComponent {
 
 
     void inject(BaseApplication baseApplication);
+    MovieComponent newMovieComponent(MovieModule movieModule);
+
 }
