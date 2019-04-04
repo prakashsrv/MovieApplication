@@ -11,7 +11,7 @@ public interface Contracts {
 
         void initView();
 
-        void populateData(Result resultList);
+        void populateData(List<Result>  resultList);
 
 
         void onError(Throwable throwable);
