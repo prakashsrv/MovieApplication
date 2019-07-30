@@ -1,6 +1,7 @@
 package com.assignment.movieapplication.Movies;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.assignment.movieapplication.Constants;
 import com.assignment.movieapplication.Model.Result;
+import com.assignment.movieapplication.Movies.MovieDetails.MovieDetailsActivity;
 import com.assignment.movieapplication.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -53,7 +55,21 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                 .into(holder.movieImage);
 
         holder.title.setText(data.get(position).getTitle());
-        holder.description.setText(data.get(position).getOverview());
+
+        context=holder.itemView.getContext();
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i=new Intent(context, MovieDetailsActivity.class);
+                i.putExtra("movieDetails",data.get(position));
+                context.startActivity(i);
+
+
+            }
+        });
+
 
 
 
@@ -75,8 +91,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         ImageView movieImage;
         @BindView(R.id.title)
         TextView title;
-        @BindView(R.id.description)
-        TextView description;
+
 
 
         public ViewHolder(View itemView) {

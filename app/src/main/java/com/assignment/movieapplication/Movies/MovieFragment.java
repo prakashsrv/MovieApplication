@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -75,8 +76,7 @@ public class MovieFragment extends Fragment implements Contracts.View {
 
 
         movieAdapter = new MovieAdapter(resultList);
-        LinearLayoutManager layoutManager2 = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-        movieRecycler.setLayoutManager(layoutManager2);
+        movieRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 3));
         movieRecycler.setItemAnimator(new DefaultItemAnimator());
         movieRecycler.setAdapter(movieAdapter);
 
