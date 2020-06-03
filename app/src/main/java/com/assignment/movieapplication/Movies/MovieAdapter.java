@@ -61,7 +61,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //moviedetailstesting
+                //test123
                 Intent i=new Intent(context, MovieDetailsActivity.class);
                 i.putExtra("movieDetails",data.get(holder.getAdapterPosition()));
                 context.startActivity(i);
